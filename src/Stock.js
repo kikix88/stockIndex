@@ -18,7 +18,7 @@ class Stock extends React.Component {
     const pointerToThis = this;
     console.log(pointerToThis);
     const API_KEY = 'HGJWFG4N8AQ66ICD';
-    let StockSymbol = 'FB';
+    let StockSymbol = 'TSLA';
     let API_Call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
     let stockChartXValuesFunction = [];
     let stockChartYValuesFunction = [];
@@ -47,10 +47,11 @@ class Stock extends React.Component {
       )
   }
 
+
   render() {
+
     return (
       <div>
-        <h1>Stock Market</h1>
         <Plot
           data={[
             {
@@ -61,11 +62,13 @@ class Stock extends React.Component {
               marker: {color: 'red'},
             }
           ]}
-          layout={{width: 720, height: 440, title: 'A Fancy Plot'}}
+          layout={{width: 720, height: 440, title: ''}}
         />
       </div>
     )
   }
 }
+
+
 
 export default Stock;
